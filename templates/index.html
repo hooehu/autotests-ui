@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Основные консольные команды Git</title>
+</head>
+<body>
+    <header>
+        <h1>Основные консольные команды Git</h1>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdd25hyNQOMs4Xx1Cv_A_oaT0zagfSWlXMBA&s"
+             alt="Логотип Git"
+             width="200">
+        <nav>
+            <a href="https://github.com/hooehu/autotests-ui" target="_blank">Ссылка на гит-репозиторий</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Настройка Git</h2>
+            <ul>
+                <li><strong>git config --global user.name "Ваше имя"</strong> - Установка имени пользователя</li>
+                <li><strong>git config --global user.email "ваш@email.com"</strong> - Установка email пользователя</li>
+                <li><strong>git config --global --list</strong> - Просмотр текущих настроек</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Создание и клонирование репозитория</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Команда</th>
+                        <th>Описание</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>git init</code></td>
+                        <td>Инициализация нового репозитория</td>
+                    </tr>
+                    <tr>
+                        <td><code>git clone "url-репозитория"</code></td>
+                        <td>Клонирование удалённого репозитория</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Основные команды работы с файлами</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Команда</th>
+                        <th>Описание</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>git add .</code></td>
+                        <td>Добавить все изменения</td>
+                    </tr>
+                    <tr>
+                        <td><code>git commit -m "Сообщение"</code></td>
+                        <td>Создать коммит</td>
+                    </tr>
+                    <tr>
+                        <td><code>git status</code></td>
+                        <td>Показать состояние репозитория</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Работа с ветками</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Команда</th>
+                        <th>Описание</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>git branch</code></td>
+                        <td>Показать список веток</td>
+                    </tr>
+                    <tr>
+                        <td><code>git checkout -b имя_ветки</code></td>
+                        <td>Создать и переключиться на новую ветку</td>
+                    </tr>
+                    <tr>
+                        <td><code>git merge имя_ветки</code></td>
+                        <td>Слить ветку с текущей</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <aside>
+        <h3>Оцените информацию</h3>
+        <form action="/submit" method="POST">
+            <fieldset>
+                <legend>Форма обратной связи</legend>
+                <p>
+                    <label>
+                        Ваше имя:
+                        <input type="text" name="username" placeholder="Введите имя">
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Пароль:
+                        <input type="password" name="password" placeholder="Введите пароль">
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input type="checkbox" name="agree">
+                        Я согласен с условиями
+                    </label>
+                </p>
+                <button type="submit">Отправить</button>
+            </fieldset>
+        </form>
+    </aside>
+
+    <footer>
+        <p> Шпаргалка по Git</p>
+    </footer>
+</body>
+</html>
