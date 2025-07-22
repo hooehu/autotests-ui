@@ -11,10 +11,10 @@ with sync_playwright() as playwright:
     email_input.focus()
 
     for char in 'user@gmail.com':
-        # Вводим каждый символ по отдельности. Задержка между вводом символов для наглядности
-        page.keyboard.type(char, delay=190)
+        # Заоплняем инпут веб-элемента символами с задержкой для наглядности
+        page.keyboard.type(char, delay=130)
 
-    # Применяем Cmd+A для выделения ввденного текста
+    # Cmd + A с клавиатуры
     page.keyboard.press('ControlOrMeta+A')
-
     page.wait_for_timeout(2000)
+
