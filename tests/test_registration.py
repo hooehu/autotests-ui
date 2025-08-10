@@ -1,6 +1,8 @@
+import pytest
 from playwright.sync_api import sync_playwright, expect
 
-
+@pytest.mark.registration
+@pytest.mark.regression
 # Создаем тестовую фунцию для обертки самого написанного теста
 def test_successful_registration():
 

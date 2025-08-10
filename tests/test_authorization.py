@@ -1,6 +1,8 @@
+import pytest
 from playwright.sync_api import sync_playwright, expect
 
-
+@pytest.mark.authorization
+@pytest.mark.regression
 def test_authorization_error():
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(headless=False)
