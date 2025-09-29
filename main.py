@@ -1,2 +1,2 @@
 print('приятно познакомиться!')
-print('scsсfc')
+print('scsс1c')
