@@ -23,5 +23,5 @@ def test_authorization_error(chromium_page: Page):
 
     expect(alert).to_be_visible()
 
-    # Ждем алерт
+    # Ждем алерт (Нужно ли использовать комбинацию?)
     expect(alert).to_have_text('Wrong email or password')
