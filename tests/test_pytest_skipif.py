@@ -1,4 +1,4 @@
-import pytest, sys
+import pytest
 
 SYSTEM_VERSION = "v1.2.0"
 

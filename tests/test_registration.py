@@ -3,7 +3,7 @@ from playwright.sync_api import sync_playwright, expect, Page
 
 @pytest.mark.registration
 @pytest.mark.regression
-# Создаем тестовую фунцию для обертки самого написанного теста
+# Создаем тест и, аннотируя, передаем в аргументах фикстуру
 def test_successful_registration(chromium_page: Page):
 
         chromium_page.goto('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration')
