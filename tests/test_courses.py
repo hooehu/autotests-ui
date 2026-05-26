@@ -5,7 +5,7 @@ from playwright.sync_api import sync_playwright, expect
 def test_empty_courses_list(chromium_page_with_state):
     chromium_page_with_state.goto('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses')
 
-    # Веб-элементы
+    # Веб-элементты
     title_courses = chromium_page_with_state.get_by_test_id('courses-list-toolbar-title-text')
     icon_empty_list = chromium_page_with_state.get_by_test_id('courses-list-empty-view-icon')
     title_empty_list = chromium_page_with_state.get_by_test_id('courses-list-empty-view-title-text')

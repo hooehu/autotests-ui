@@ -2,18 +2,15 @@ import pytest
 from playwright.sync_api import sync_playwright, Page, expect, Playwright
 
 
-# @pytest.fixture  # Объявляем фикстуру, по умолчанию скоуп function, то что нам нужно
-# def chromium_page() -> Page:  # Аннотируем возвращаемое фикстурой значение
-#     # Ниже идет инициализация и открытие новой страницы
-#     with sync_playwright() as playwright:
-#         # Запускаем браузер
-#         browser = playwright.chromium.launch(headless=False)
-#         page = browser.new_page()
-#
-#         # Передаем страницу для использования в тесте
-#         yield page
-#         # Закрываем браузер после выполнения тестов
-#         browser.close()
+@pytest.fixture
+def chromium_page() -> Page:
+    with sync_playwright() as playwright:
+        browser = playwright.chromium.launch(headless=False)
+        page = browser.new_page()
+
+        yield page
+
+        browser.close()
 
 @pytest.fixture(scope="session")
 def initialize_browser_state():
