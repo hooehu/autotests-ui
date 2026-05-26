@@ -12,7 +12,7 @@ with sync_playwright() as playwright:
     password_input = page.get_by_test_id('registration-form-password-input').locator('input')
     registration_button = page.get_by_test_id('registration-page-registration-button')
 
-    # Заполняем поля ввода
+    # Заполняем инпуты
     email_input.fill('user@gmail.com')
     username_input.fill('username')
     password_input.fill('password')

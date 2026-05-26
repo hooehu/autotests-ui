@@ -1,4 +1,4 @@
-# Импортируем PLaywright
+# Импортируем Playwright
 from playwright.sync_api import sync_playwright, expect
 
 # expect - функция из Playwright, которая позволяет писать ассерты (проверки)

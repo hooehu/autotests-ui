@@ -9,6 +9,7 @@ with sync_playwright() as playwright:
     registration_link = page.get_by_test_id('login-page-registration-link')
 
     # Наводимся на ссылку и смотрим, что она подсвечивается
+    # Если запускать в хедлесс режиме, то проверять свойства элемента в доме
     registration_link.hover()
     page.wait_for_timeout(2000)
 

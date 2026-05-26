@@ -7,7 +7,7 @@ with sync_playwright() as playwright:
     # Инициализация браузера
     browser = playwright.chromium.launch(headless=False)
 
-    # Открытие url в новой вкладке
+    # Открываем url в новой вкладке
     page = browser.new_page()
     page.goto('http://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration')
 

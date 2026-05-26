@@ -15,7 +15,7 @@ with sync_playwright() as playwright:
     # Проверка неактивности кнопки регистрации
     expect(registration_button).to_be_disabled()
 
-    # Заполнение полей
+    # Заолнеяем полея (Иммитация ввода с клавиатуры по символам)
     email_input.focus()
     for char in 'user.name@gmail.com':
         page.keyboard.press(char, delay=100)

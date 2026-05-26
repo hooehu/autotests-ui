@@ -8,4 +8,4 @@ with sync_playwright() as playwright:
 
     login_button = page.get_by_test_id('login-page-login-button')
 
-    expect(login_button).to_be_disabled() # ничего не вернет, т к веб-элемент задизейблен
+    expect(login_button).to_be_disabled() # ничего не вернет, т к веб-элемент задизейблен - проверка пройдена
