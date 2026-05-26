@@ -1,2 +1,2 @@
 # autotests-ui
-Learning UI AT on stepik 
+Learning UI AT on stepik ^)
