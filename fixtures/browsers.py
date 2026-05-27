@@ -8,7 +8,7 @@ def chromium_page() -> Page:  # Аннотируем возвращаемое ф
     # Ниже идет инициализация и открытие новой страницы
     with sync_playwright() as playwright:
         # Запускаем браузер
-        browser = playwright.chromium.launch(headless=False)
+        browser = playwright.chromium.launch()
         page = browser.new_page()
 
         # Передаем страницу для использования в тесте
