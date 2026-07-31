@@ -1,4 +1,5 @@
 from components.navigation.navbar_component import NavbarComponent
+from components.navigation.sidebar_component import SidebarComponent
 from pages.base_page import BasePage
 from playwright.sync_api import Page, expect
 
@@ -6,7 +7,9 @@ from playwright.sync_api import Page, expect
 class DashboardPage(BasePage):
     def __init__(self, page: Page):
         super().__init__(page)
+
         # Применяем Page Component, чтобы тут можно было работать с его методами
+        self.sidebar = SidebarComponent(page)
         self.navbar_component = NavbarComponent(page)
 
         self.dashboard_title = page.get_by_test_id('dashboard-toolbar-title-text')
