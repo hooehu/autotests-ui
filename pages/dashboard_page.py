@@ -10,7 +10,7 @@ class DashboardPage(BasePage):
 
         # Применяем Page Component, чтобы тут можно было работать с его методами
         self.sidebar = SidebarComponent(page)
-        self.navbar_component = NavbarComponent(page)
+        self.navbar = NavbarComponent(page)
 
         self.dashboard_title = page.get_by_test_id('dashboard-toolbar-title-text')
         self.students_title = page.get_by_test_id('students-widget-title-text')
