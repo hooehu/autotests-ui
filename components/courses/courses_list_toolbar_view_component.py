@@ -10,7 +10,9 @@ class CoursesListToolbarViewComponent(BaseComponent):
         super().__init__(page)
 
         self.title = page.get_by_test_id('courses-list-toolbar-title-text')
-        self.create_course_button = page.get_by_test_id('courses-list-toolbar-create-course-button')
+        self.create_course_button = page.get_by_test_id(
+            'courses-list-toolbar-create-course-button'
+        )
 
     def check_visible(self):
         expect(self.title).to_be_visible()
@@ -21,5 +23,4 @@ class CoursesListToolbarViewComponent(BaseComponent):
     def click_course_button(self):
         self.create_course_button.click()
         self.check_current_url(re.compile(".*/#/courses/create"))
-
 

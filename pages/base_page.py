@@ -1,14 +1,17 @@
-from playwright.sync_api import Page
-# Создаем класс для базовых операций, применимых ко всем страницам
+from typing import Pattern
+
+from playwright.sync_api import Page, expect
+
+
 class BasePage:
-    # Конструктор
     def __init__(self, page: Page):
         self.page = page
 
-    # Открытие страницы
-    def visit(self, url: str):
-        # Обращаемся к атрибуту page и применяем метод goto(), в который передаем url
+    def visit(self, url: str) -> None:
         self.page.goto(url, wait_until='networkidle')
-    # Перезагрузка страницы
-    def reload(self, url: str):
+
+    def reload(self, url: str) -> None:
         self.page.reload(wait_until='networkidle')
+
+    def check_current_url(self, expected_url: Pattern[str]) -> None:
+        expect(self.page).to_have_url(expected_url)
