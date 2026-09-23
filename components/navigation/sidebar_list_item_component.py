@@ -1,20 +1,18 @@
-# Отвечает за 1 компонент внутри сайдбара - двойной пейдж обжект
 from typing import Pattern
 
 from playwright.sync_api import Page, expect
 
 from components.base_component import BaseComponent
 
+
 class SidebarListItemComponent(BaseComponent):
-    # identifier - для динамического локатора
     def __init__(self, page: Page, identifier: str):
         super().__init__(page)
-        # Локаторы задаем в простом формате, так как обзор сокращен конкретно до айтемов в сайдбаре
         self.icon = page.get_by_test_id(f'{identifier}-drawer-list-item-icon')
         self.title = page.get_by_test_id(f'{identifier}-drawer-list-item-title-text')
         self.button = page.get_by_test_id(f'{identifier}-drawer-list-item-button')
 
-    def check_visible(self, title: str):
+    def check_visible(self, title: str) -> None:
         expect(self.icon).to_be_visible()
 
         expect(self.title).to_be_visible()
@@ -22,6 +20,6 @@ class SidebarListItemComponent(BaseComponent):
 
         expect(self.button).to_be_visible()
 
-    def navigate(self, expected_url: Pattern[str]):
+    def navigate(self, expected_url: Pattern[str]) -> None:
         self.button.click()
         self.check_current_url(expected_url)
