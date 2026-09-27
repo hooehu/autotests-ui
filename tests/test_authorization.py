@@ -19,8 +19,7 @@ def test_wrong_email_or_password_authorization(
     password: str
 ) -> None:
     login_page.visit(
-        'https://nikita-filonov.github.io/'
-        'qa-automation-engineer-ui-course/#/auth/login'
+        'https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/login'
     )
     login_page.login_form_component.fill(email=email, password=password)
     login_page.login_form_component.check_visible(

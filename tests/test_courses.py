@@ -34,6 +34,7 @@ def test_create_course(
     create_course_page.create_course_toolbar_view_component.check_visible()
 
     create_course_page.image_upload_widget_component.check_visible(
+        identifier='create-course-preview',
         is_image_uploaded=False
     )
 
@@ -53,9 +54,11 @@ def test_create_course(
 
     create_course_page.check_visible_exercises_empty_view()
     create_course_page.image_upload_widget_component.upload_preview_image(
-        './testdata/files/image.png'
+        './testdata/files/image.png',
+        identifier='create-course-preview'
     )
     create_course_page.image_upload_widget_component.check_visible(
+        identifier='create-course-preview',
         is_image_uploaded=True
     )
 
