@@ -9,30 +9,27 @@ from components.navigation.sidebar_list_item_component import SidebarListItemCom
 class SidebarComponent(BaseComponent):
     def __init__(self, page: Page):
         super().__init__(page)
-        self.logout_list_item = SidebarListItemComponent(page)
-        self.courses_list_item = SidebarListItemComponent(page)
-        self.dashboard_list_item = SidebarListItemComponent(page)
+        self.logout_list_item = SidebarListItemComponent(page, identifier='logout')
+        self.courses_list_item = SidebarListItemComponent(page, identifier='courses')
+        self.dashboard_list_item = SidebarListItemComponent(page, identifier='dashboard')
 
     def check_visible(self) -> None:
-        self.logout_list_item.check_visible('Logout', identifier='logout')
-        self.courses_list_item.check_visible('Courses', identifier='courses')
-        self.dashboard_list_item.check_visible('Dashboard', identifier='dashboard')
+        self.logout_list_item.check_visible('Logout')
+        self.courses_list_item.check_visible('Courses')
+        self.dashboard_list_item.check_visible('Dashboard')
 
     def click_logout(self) -> None:
         # .* в регулярке значит, что левая часть - любая
         self.logout_list_item.navigate(
-            re.compile(r'.*/#/auth/login'),
-            identifier='logout'
+            re.compile(r'.*/#/auth/login')
         )
 
     def click_courses(self) -> None:
         self.courses_list_item.navigate(
-            re.compile(r'.*/#/courses'),
-            identifier='courses'
+            re.compile(r'.*/#/courses')
         )
 
     def click_dashboard(self) -> None:
         self.dashboard_list_item.navigate(
-            re.compile(r'.*/#/dashboard'),
-            identifier='dashboard'
+            re.compile(r'.*/#/dashboard')
         )

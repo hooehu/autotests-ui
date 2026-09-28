@@ -31,12 +31,11 @@ class CreateCoursePage(BasePage):
         self.create_course_exercises_toolbar_view_component = (
             CreateCourseExercisesToolbarViewComponent(page)
         )
-        self.image_upload_widget_component = ImageUploadWidgetComponent(page)
-        self.exercises_empty_view = EmptyViewComponent(page)
+        self.image_upload_widget_component = ImageUploadWidgetComponent(page, identifier='create-course-preview')
+        self.exercises_empty_view = EmptyViewComponent(page, identifier='create-course-exercises')
 
     def check_visible_exercises_empty_view(self) -> None:
         self.exercises_empty_view.check_visible(
             title='There is no exercises',
-            description='Click on "Create exercise" button to create new exercise',
-            identifier='create-course-exercises'
+            description='Click on "Create exercise" button to create new exercise'
         )

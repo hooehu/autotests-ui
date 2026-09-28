@@ -9,32 +9,32 @@ from elements.text import Text
 
 
 class SidebarListItemComponent(BaseComponent):
-    def __init__(self, page: Page):
+    def __init__(self, page: Page, identifier: str):
         super().__init__(page)
         self.icon = Icon(
             page=page,
-            locator='{identifier}-drawer-list-item-icon',
+            locator=f'{identifier}-drawer-list-item-icon',
             name='Sidebar icon'
         )
         self.title = Text(
             page=page,
-            locator='{identifier}-drawer-list-item-title-text',
+            locator=f'{identifier}-drawer-list-item-title-text',
             name='Sidebar title text'
         )
         self.button = Button(
             page=page,
-            locator='{identifier}-drawer-list-item-button',
+            locator=f'{identifier}-drawer-list-item-button',
             name='Sidebar button'
         )
 
-    def check_visible(self, title: str, identifier: str) -> None:
-        self.icon.check_visible(identifier=identifier)
+    def check_visible(self, title: str) -> None:
+        self.icon.check_visible()
 
-        self.title.check_visible(identifier=identifier)
-        self.title.check_have_text(title, identifier=identifier)
+        self.title.check_visible()
+        self.title.check_have_text(title)
 
-        self.button.check_visible(identifier=identifier)
+        self.button.check_visible()
 
-    def navigate(self, expected_url: Pattern[str], identifier: str) -> None:
-        self.button.click(identifier=identifier)
+    def navigate(self, expected_url: Pattern[str]) -> None:
+        self.button.click()
         self.check_current_url(expected_url)
