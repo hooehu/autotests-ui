@@ -1,26 +1,34 @@
-from playwright.sync_api import Page, expect
+from playwright.sync_api import Page
 
 from components.base_component import BaseComponent
+from elements.button import Button
+from elements.text import Text
 
 
 class CreateCourseToolbarViewComponent(BaseComponent):
     def __init__(self, page: Page):
         super().__init__(page)
 
-        self.title = page.get_by_test_id('create-course-toolbar-title-text')
-        self.create_course_button = page.get_by_test_id(
-            'create-course-toolbar-create-course-button'
+        self.title = Text(
+            page=page,
+            locator='create-course-toolbar-title-text',
+            name='Title'
+        )
+        self.create_course_button = Button(
+            page=page,
+            locator='create-course-toolbar-create-course-button',
+            name='Create course button'
         )
 
     def check_visible(self, is_create_course_disabled: bool = True) -> None:
-        expect(self.title).to_be_visible()
-        expect(self.title).to_have_text('Create course')
-        expect(self.create_course_button).to_be_visible()
+        self.title.check_visible()
+        self.title.check_have_text('Create course')
+        self.create_course_button.check_visible()
 
         if is_create_course_disabled:
-            expect(self.create_course_button).to_be_disabled()
+            self.create_course_button.check_disabled()
         else:
-            expect(self.create_course_button).to_be_enabled()
+            self.create_course_button.check_enabled()
 
     def click_create_course_button(self) -> None:
         self.create_course_button.click()
