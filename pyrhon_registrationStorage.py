@@ -28,7 +28,7 @@ with sync_playwright() as playwright:
 
     # Сохраняем состояние и указываем, куда мы его хотим сохранить (в json файл)
     # В результате получаем json файл с выгруженными данными из local storage
-    context.storage_state(path='browser-state.json')
+    context.storage_state(path='fixtures/browser-state.json')
 
 
     # Запускаем новую сессию браузера

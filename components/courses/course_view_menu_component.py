@@ -24,7 +24,7 @@ class CourseViewMenuComponent(BaseComponent):
             name='Delete button'
         )
 
-    def click_edit(self, index: int, nth: int = 0):
+    def click_edit(self, index: int):
         self.menu_button.click(nth=index)
         self.edit_button.check_visible(nth=index)
         self.edit_button.click(nth=index)

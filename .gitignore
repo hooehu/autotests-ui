@@ -1,3 +1,3 @@
 venv/
-browser-state.json
+fixtures/browser-state.json
 .claude
