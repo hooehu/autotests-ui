@@ -11,14 +11,14 @@ import pytest
 def test_smoke_case():
     ...
 
-@pytest.mark.regression
+#@pytest.mark.regression
 def test_regression_case():
     ...
 
 
 #Маркировка класса
 
-@pytest.mark.regression
+#@pytest.mark.regression
 class TestUserAuthentication:
     @pytest.mark.smoke
     def test_login(self):
@@ -31,7 +31,7 @@ class TestUserAuthentication:
 
 # Можно использовать -m "smoke and regression and critical"
 @pytest.mark.smoke
-@pytest.mark.regression
+#@pytest.mark.regression
 @pytest.mark.critical
 def test_critical_login():
     ...
